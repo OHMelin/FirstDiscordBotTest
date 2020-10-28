@@ -8,8 +8,10 @@ module.exports.run = async (bot, message, args) => {
 
         console.log(kort.konge)
         console.log(kort.dronning)
+        console.log(kort.slave)
 
     var number1 = Math.floor(Math.random() * 10) + 1;
+    var kort = [3, 5, 10, 20, 3, 3, 3]
     var number2 = Math.floor(Math.random() * 10) + 1;
     var number3 = Math.floor(Math.random() * 10) + 1;
     var number4 = Math.floor(Math.random() * 10) + 1;
@@ -29,11 +31,12 @@ module.exports.run = async (bot, message, args) => {
 
     //Second number
     message.channel.awaitMessages(m => m.author.id == message.author.id,
-      {max: 1, time: 10000}).then(collected => {
+      {max: 2, time: 10000}).then(collected => {
               if (collected.first().content === "h") {
                       let total = 0 + number1 + number2;
                       if (total > 21) {
                         message.channel.send(lost + total)
+                        return;
                       }
                       else {
                         message.channel.send(a1 + number2 + a2 + total + a3);
@@ -41,11 +44,12 @@ module.exports.run = async (bot, message, args) => {
 
     //Third number
     message.channel.awaitMessages(m => m.author.id == message.author.id,
-      {max: 1, time: 10000}).then(collected => {
+      {max: 2, time: 10000}).then(collected => {
               if (collected.first().content === "h") {
                       let total = 0 + number1 + number2 + number3;
                       if (total > 21) {
                         message.channel.send(lost + total)
+                        return;
                       }
                       else {
                         message.channel.send(a1 + number3 + a2 + total + a3);
@@ -53,11 +57,12 @@ module.exports.run = async (bot, message, args) => {
     
     //Fourth number
     message.channel.awaitMessages(m => m.author.id == message.author.id,
-      {max: 1, time: 10000}).then(collected => {
+      {max: 2, time: 10000}).then(collected => {
               if (collected.first().content === "h") {
                       let total = 0 + number1 + number2 + number3 + number4;
                       if (total > 21) {
                         message.channel.send(lost + total)
+                        return;
                       }
                       else {
                         message.channel.send(a1 + number4 + a2 + total + a3);
@@ -65,12 +70,12 @@ module.exports.run = async (bot, message, args) => {
                
     //Fifth number
     message.channel.awaitMessages(m => m.author.id == message.author.id,
-      {max: 1, time: 10000}).then(collected => {
+      {max: 2, time: 10000}).then(collected => {
               if (collected.first().content === "h") {
                       let total = 0 + number1 + number2 + number3 + number4 + number5;
                       if (total > 21) {
                         message.channel.send(lost + total)
-                        return; 
+                        return;
                       }
                       else {
                         message.channel.send(a1 + number5 + a2 + total + a3);
