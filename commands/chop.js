@@ -26,11 +26,7 @@ module.exports.run = async (bot, message, args) => {
         message.channel.send(reply4)
         message.channel.awaitMessages(m => m.author.id == message.author.id,
             {max: 2, time: 10000}).then(collected => {
-                    // only accept messages by the user who sent the command
-                    // accept only 1 message, and return the promise after 30000ms = 30s
-
-                    // first (and, in this case, only) message of the collection
-                    if (collected.first().content.toUpperCase() == secretWordToCatch) {
+                    if (collected.first().content === secretWordToCatch) {
                             message.channel.send(caughtIt);
                     }
                     else
