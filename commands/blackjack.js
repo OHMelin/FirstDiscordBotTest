@@ -3,7 +3,6 @@ const bot = new Discord.Client();
 const botconfig = require("../botconfig.json")
 const kort = require("../kort.json")
 
-
 module.exports.run = async (bot, message, args) => {
 
         console.log(kort.konge)
@@ -11,7 +10,6 @@ module.exports.run = async (bot, message, args) => {
         console.log(kort.slave)
 
     var number1 = Math.floor(Math.random() * 10) + 1;
-    var kort = [3, 5, 10, 20, 3, 3, 3]
     var number2 = Math.floor(Math.random() * 10) + 1;
     var number3 = Math.floor(Math.random() * 10) + 1;
     var number4 = Math.floor(Math.random() * 10) + 1;
