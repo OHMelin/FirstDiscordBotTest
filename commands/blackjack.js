@@ -1,10 +1,13 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const botconfig = require("../botconfig.json")
-
+const kort = require("../kort.json")
 
 
 module.exports.run = async (bot, message, args) => {
+
+        console.log(kort.konge)
+        console.log(kort.dronning)
 
     var number1 = Math.floor(Math.random() * 10) + 1;
     var number2 = Math.floor(Math.random() * 10) + 1;
@@ -67,6 +70,7 @@ module.exports.run = async (bot, message, args) => {
                       let total = 0 + number1 + number2 + number3 + number4 + number5;
                       if (total > 21) {
                         message.channel.send(lost + total)
+                        return; 
                       }
                       else {
                         message.channel.send(a1 + number5 + a2 + total + a3);
@@ -113,6 +117,11 @@ module.exports.run = async (bot, message, args) => {
                       message.channel.send(tooLong);
               });
 }
+
+
+
+
+
 
 module.exports.config = {
     name: "bj",
