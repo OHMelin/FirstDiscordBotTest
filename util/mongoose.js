@@ -15,7 +15,7 @@ exports.init = () => {
         useUnifiedTopology: true
     };
 //mongodb://localhost:27017/test
-    mongoose.connect('mongodb+srv://test:test@skullwars.uzkxg.mongodb.net/test', dbOptions);
+    mongoose.connect('mongodb://localhost:27017/test', dbOptions);
 
     mongoose.connection.on('connected', () => {
         for(let schema in schemas) {
